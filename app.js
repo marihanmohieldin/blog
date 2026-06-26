@@ -20,11 +20,14 @@ app.use(
   }),
 );
 
+app.set("trust proxy", 1);
 // Rate Limting
 app.use(
   rateLimting({
     windowMs: 10 * 60 * 1000,
     max: 100,
+    standardHeaders: true,
+    legacyHeaders: false,
   }),
 );
 
