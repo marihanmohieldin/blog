@@ -4,7 +4,7 @@ const {
   sendResestPasswordLinkCtrl,
   getResestPasswordLinkCtrl,
   resetPasswordCtrl,
-} = require("../controllers.js/passwordController");
+} = require("../controllers/passwordController");
 
 // /api/password/reset-password-link
 router.post("/reset-password-link", sendResestPasswordLinkCtrl);
@@ -14,6 +14,5 @@ router
   .route("/reset-password/:userId/:token")
   .get(getResestPasswordLinkCtrl)
   .post(resetPasswordCtrl);
-
 
 module.exports = router;

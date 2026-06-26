@@ -4,7 +4,7 @@ const cors = require("cors");
 const { connectToDB } = require("./config/connectToDB");
 const helmet = require("helmet");
 const rateLimting = require("express-rate-limit");
-const { errorHandler, notFound } = require("./middlewares.js/error");
+const { errorHandler, notFound } = require("./middlewares/error");
 connectToDB();
 const app = express();
 app.use(express.json());
@@ -32,12 +32,12 @@ app.use(
 app.use(cors());
 
 // Routes
-app.use("/api/auth", require("./routes.js/authRoute"));
-app.use("/api/users", require("./routes.js/usersRoute"));
-app.use("/api/posts", require("./routes.js/postsRout"));
-app.use("/api/comments", require("./routes.js/commentsRoute"));
-app.use("/api/categories", require("./routes.js/categoriesRoute"));
-app.use("/api/password", require("./routes.js/passwordRoute"));
+app.use("/api/auth", require("./routes/authRoute"));
+app.use("/api/users", require("./routes/usersRoute"));
+app.use("/api/posts", require("./routes/postsRout"));
+app.use("/api/comments", require("./routes/commentsRoute"));
+app.use("/api/categories", require("./routes/categoriesRoute"));
+app.use("/api/password", require("./routes/passwordRoute"));
 
 // Error Handler Middleware
 app.use(notFound);

@@ -5,12 +5,12 @@ const {
   getAllCommentCtrl,
   deleteCommentCtrl,
   updateCommentCtrl,
-} = require("../controllers.js/commentsController");
-const validateObjectId = require("../middlewares.js/validateObjectId");
+} = require("../controllers/commentsController");
+const validateObjectId = require("../middlewares/validateObjectId");
 const {
   verifyToken,
   verifyTokenAndAdmin,
-} = require("../middlewares.js/verifyToken");
+} = require("../middlewares/verifyToken");
 
 // /api/comments
 router

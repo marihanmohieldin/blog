@@ -7,10 +7,10 @@ const {
   updatePostCtrl,
   updatePostImageCtrl,
   toggleLikeCtrl,
-} = require("../controllers.js/postsController");
-const photoUpload = require("../middlewares.js/photoUpload");
-const validateObjectId = require("../middlewares.js/validateObjectId");
-const { verifyToken } = require("../middlewares.js/verifyToken");
+} = require("../controllers/postsController");
+const photoUpload = require("../middlewares/photoUpload");
+const validateObjectId = require("../middlewares/validateObjectId");
+const { verifyToken } = require("../middlewares/verifyToken");
 
 const router = require("express").Router();
 router

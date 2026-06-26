@@ -3,7 +3,7 @@ const {
   registerUserCtrl,
   loginUserCtrl,
   verifyUserAccountCtrl,
-} = require("../controllers.js/authControllers");
+} = require("../controllers/authControllers");
 
 router.post("/register", registerUserCtrl);
 router.post("/login", loginUserCtrl);

@@ -6,15 +6,15 @@ const {
   getUsersContCtrl,
   profilePhotoCtrl,
   deleteUserProfileCtrl,
-} = require("../controllers.js/usersController");
+} = require("../controllers/usersController");
 const {
   verifyToken,
   verifyTokenAndAdmin,
   verifyTokenAnddOnlyUser,
   verifyTokenAndAuthorization,
-} = require("../middlewares.js/verifyToken");
-const validateObjectId = require("../middlewares.js/validateObjectId");
-const photoUpload = require("../middlewares.js/photoUpload");
+} = require("../middlewares/verifyToken");
+const validateObjectId = require("../middlewares/validateObjectId");
+const photoUpload = require("../middlewares/photoUpload");
 
 // /api/users/profile
 router.route("/profile").get(verifyTokenAndAdmin, getAllUsersCtrl);
