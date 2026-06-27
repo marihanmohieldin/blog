@@ -2,9 +2,9 @@
   "name": "blog-backend",
   "version": "1.0.0",
   "description": "backend of blog application",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "author": "Marihan Omar",
   "engines": {"node":"22.20.0"},
