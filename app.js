@@ -1,7 +1,5 @@
 const express = require("express");
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
+require("dotenv").config();
 const cors = require("cors");
 const { connectToDB } = require("./config/connectToDB");
 const helmet = require("helmet");
