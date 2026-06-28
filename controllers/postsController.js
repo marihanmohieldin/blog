@@ -25,7 +25,7 @@ module.exports.createPostCtrl = asyncHandler(async (req, res) => {
   if (error) {
     return res.status(400).json({ message: error.details[0].message });
   }
-  const imagePath = path.join(__dirname, `../images/${req.file.filename}`);
+  const imagePath = path.join("/tmp", req.file.filename);
   const cloudinaryImage = await cloudinaryUploadImage(imagePath);
 
   const post = await Post.create({
@@ -185,7 +185,7 @@ module.exports.updatePostImageCtrl = asyncHandler(async (req, res) => {
       .json({ message: "access denied , your not allowed" });
   }
   await cloudinaryRemoveImage(post.image.publicId);
-  const imagePath = path.join(__dirname, `../images/${req.file.filename}`);
+  const imagePath = path.join("/tmp", req.file.filename);
   const cloudinaryImage = await cloudinaryUploadImage(imagePath);
   const updatePostImage = await Post.findByIdAndUpdate(
     req.params.id,

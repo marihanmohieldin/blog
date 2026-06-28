@@ -94,7 +94,7 @@ module.exports.profilePhotoCtrl = asyncHandler(async (req, res) => {
   if (!req.file) {
     return res.status(400).json({ message: "no image provided" });
   }
-  const imagePath = path.join(__dirname, `../images/${req.file.filename}`);
+  const imagePath = path.join("/tmp", req.file.filename);
   const resault = await cloudinaryUploadImage(imagePath);
   const user = await User.findById(req.user.id);
   if (user.profilePhoto.publicId !== null) {
